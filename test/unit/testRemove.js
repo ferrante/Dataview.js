@@ -1,4 +1,4 @@
-var TestRemove = TestCase("TestRemove", {
+TestCase("TestRemove", {
     setUp: function () {
         this.data = getMockedData();
         this.view = getMockedView();
@@ -49,10 +49,10 @@ var TestRemove = TestCase("TestRemove", {
         this.data.remove("testObject.foo.testArray", indexToRemove);
         
         
-        assertEquals("testArray property should contain " + (simpleOriginalLength - 1) + " items", this.data.get("testArray").length, simpleOriginalLength - 1);
-        assertEquals("testObject.foo.testArray property should contain " + nestedOriginalLength - 1 + " items", this.data.get("testObject.foo.testArray").length, nestedOriginalLength - 1);
-        assertNotEquals("testArray property should not be equal " + simpleOriginalValue, this.data.get("testArray")[indexToRemove], simpleOriginalValue);
-        assertNotEquals("testObject.foo.testArray should not be equal " + nestedOriginalValue, this.data.get("testObject.foo.testArray")[indexToRemove], nestedOriginalValue);
+        assertEquals("property should contain less items", simpleOriginalLength - 1, this.data.get("testArray").length);
+        assertEquals("property should contain less items", this.data.get("testObject.foo.testArray").length, nestedOriginalLength - 1);
+        assertNotEquals("indexes should be aligned", this.data.get("testArray")[indexToRemove], simpleOriginalValue);
+        assertNotEquals("indexes should be aligned", this.data.get("testObject.foo.testArray")[indexToRemove], nestedOriginalValue);
     },
     
     "test if it is possible to remove a whole array using view method" : function () {

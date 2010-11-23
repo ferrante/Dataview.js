@@ -1,4 +1,4 @@
-var TestLock = TestCase("TestLock", {
+TestCase("TestLock", {
     setUp: function () {
         this.data = getMockedData();
         this.view = getMockedView();

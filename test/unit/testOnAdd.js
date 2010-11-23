@@ -1,4 +1,4 @@
-var TestOnAdd = TestCase("TestOnAdd", {
+TestCase("TestOnAdd", {
     setUp: function () {
         this.data = getMockedData();
         this.view = getMockedView();

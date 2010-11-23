@@ -1,4 +1,4 @@
-var TestFreeze = TestCase("TestFreeze", {
+TestCase("TestFreeze", {
     setUp: function () {
         this.data = getMockedData();
         this.view = getMockedView();
