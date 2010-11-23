@@ -33,7 +33,8 @@ THE SOFTWARE.
         parseProperty = function (property, data) {
             var sliced,
                 root,
-                prop;
+                prop,
+                i;
             
             if (property in data) {
                 return [data, property, property];
@@ -42,9 +43,9 @@ THE SOFTWARE.
                 root = data;
                 prop = sliced.pop();
                 if (sliced.length) {
-                    sliced.map(function (i) {
-                        root = root[i];
-                    });
+                    for (i = sliced.length - 1; i > -1; i -= 1) {
+                        root = root[sliced[i]];
+                    }
                 }
                 
                 return [root, prop, property];
@@ -415,5 +416,5 @@ THE SOFTWARE.
     this.dataview = function (data) {
         return dataview(data);
     };
-    this.dataview.version = "0.8";
+    this.dataview.version = "0.8.1";
 })();
