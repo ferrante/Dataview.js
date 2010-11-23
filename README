@@ -1,1 +1,9 @@
-Dataview.js is a JavaScript library connecting data objects with selected views. It helps you in writing more consistent applications where nothing happens by accident, because you simply decide where and what can modify your data. Dataview.js is distributed under MIT license.
+Dataview.js is MIT-licensed JavaScript library connecting data objects with selected views.
+
+Its goal is to provide a software that reduces the number of mistakes dealing with
+data inside JS applications. Thus, you can lock the data properties and allow only a few 
+methods to modify these properties.
+
+Dataview.js is unit-tested with a strong bit of help coming from JsTestDriver and Sinon libraries.
+
+You can find the documentation at http://dataviewjs.com.
